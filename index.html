@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="Aashi">
+
+<head>
+  <meta charset="utf-8">
+  <title>Troosearch</title>
+  <link href="css/main.css" rel="stylesheet">
+  <script src="js/libs/angular.js"></script>
+  <script src="js/modules/aashi.js"></script>
+
+  <script src="js/controllers/manmohanController.js"></script>
+</head>
+
+<body ng-controller="ManmohanController">
+
+  <div class="main-heading"> TROOSEARCH</div>
+
+  <div class="troosearch-inputs">
+    <input ng-keydown="keyDownEvent($event)" type="text" name="input" id="input" class="input" placeholder="Search property!!!" ng-model='id'>
+
+    <input ng-value="hint"  type="text" name="inputS" id="input-suggestion" class="input-suggestion" placeholder="" >
+
+    <div ng-click="clickEvent($event)"  class="suggestion-box" id="suggestion-box">
+      <div style="display: inline;" id="single-suggestion">
+         <div class="display-suggestion" ng-repeat="$menu in data" ng-show="keyword != '' " >
+              {{ $menu.name }}
+         </div>
+      </div>
+       <div ng-style="loadStyle" class="load" id="Loading-suggestion" >Loading...</div>
+    </div>
+  </div>
+
+
+
+</body>
+
+</html>
